@@ -1,0 +1,20 @@
+app = 'pixam-protohackers'
+primary_region = 'syd'
+
+[build]
+
+[http_service]
+  internal_port = 10000
+  auto_stop_machines = 'off'
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 10000
+
+  [[services.ports]]
+    port = 10000
+
+[[vm]]
+  size = 'shared-cpu-1x'
